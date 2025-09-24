@@ -65,6 +65,19 @@
             opacity: 0.8;
         }
 
+        .speaker-signup-header {
+            background: #ff6b6b !important;
+            padding: 0.5rem 1rem !important;
+            border-radius: 20px !important;
+            font-weight: bold !important;
+        }
+
+        .speaker-signup-header:hover {
+            background: #ff5252 !important;
+            opacity: 1 !important;
+            transform: translateY(-1px);
+        }
+
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -279,6 +292,106 @@
             transform: translateY(-2px);
         }
 
+        /* Speaker Signup Section */
+        .speaker-signup {
+            padding: 4rem 0;
+            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .speaker-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .speaker-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .speaker-text > p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .speaker-benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .benefit {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .benefit-icon {
+            font-size: 2rem;
+            min-width: 50px;
+        }
+
+        .benefit h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .benefit p {
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+
+        .speaker-cta {
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .speaker-cta h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .speaker-cta > p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .speaker-button {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 1.2rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(255,107,107,0.4);
+            margin-bottom: 1.5rem;
+        }
+
+        .speaker-button:hover {
+            background: #ff5252;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255,107,107,0.6);
+        }
+
+        .speaker-note {
+            opacity: 0.7;
+        }
+
         /* Footer */
         footer {
             background: #333;
@@ -356,6 +469,7 @@
                         <li><a href="#audience">Who</a></li>
                         <li><a href="#info">Event Info</a></li>
                         <li><a href="#community">Community</a></li>
+                        <li><a href="#speak" class="speaker-signup-header">Present</a></li>
                     </ul>
                 </nav>
             </div>
@@ -366,7 +480,7 @@
         <div class="container">
             <h1 class="fade-in">Demo Camp Lansing</h1>
             <p class="fade-in">Show & Tell for Makers, Builders, and Dreamers</p>
-            <a href="#info" class="cta-button fade-in">Join the Next Event</a>
+            <a href="https://www.eventbrite.com/e/demo-camp-lansing-2025-tickets-1740630686239" class="cta-button fade-in">Join the Next Event</a>
         </div>
     </section>
 
@@ -442,11 +556,13 @@
             <div class="info-grid">
                 <div class="info-card">
                     <h3>📅 When</h3>
-                    <p>TBD</p>
+                    <p>December 9th, 2025</p>
+                    <p>4:30 PM - 7:30 PM</p>
                 </div>
                 <div class="info-card">
                     <h3>📍 Where</h3>
-                    <p>TBD</p>
+                    <p>MSUFCU HQ1</p>
+                    <p>3775 Coolidge Road in East Lansing, MI</p>
                 </div>
                 <div class="info-card">
                     <h3>⏰ Format</h3>
@@ -455,6 +571,45 @@
                 <div class="info-card">
                     <h3>💰 Cost</h3>
                     <p>Free to attend! Just bring your enthusiasm and maybe a project to share</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="speak" class="speaker-signup">
+        <div class="container">
+            <div class="speaker-content">
+                <div class="speaker-text">
+                    <h2>Ready to Share Your Work?</h2>
+                    <p>Have something cool to demo? We'd love to see it! Whether it's a side project, startup idea, creative experiment, or professional work - if you built it, we want to hear about it.</p>
+                    <div class="speaker-benefits">
+                        <div class="benefit">
+                            <span class="benefit-icon">🎤</span>
+                            <div>
+                                <h4>7-Minute Spotlight</h4>
+                                <p>Quick, focused demos that keep energy high</p>
+                            </div>
+                        </div>
+                        <div class="benefit">
+                            <span class="benefit-icon">💬</span>
+                            <div>
+                                <h4>Valuable Feedback</h4>
+                                <p>Get insights from fellow creators and potential users</p>
+                            </div>
+                        </div>
+                        <div class="benefit">
+                            <span class="benefit-icon">🌟</span>
+                            <div>
+                                <h4>Build Your Reputation</h4>
+                                <p>Establish yourself in the local tech community</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="speaker-cta">
+                    <h3>Sign Up to Present</h3>
+                    <p>Slots are limited, so reserve your spot early!</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSf3YtiLNwD3f67_0SS4BR1qITtlnkCSRC_PwiSMfHwGZWVQlA/viewform?usp=dialog" target="_blank" and rel="noopener noreferrer" class="speaker-button">Apply to Present</a>
                 </div>
             </div>
         </div>
