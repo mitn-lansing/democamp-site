@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demo Camp Lansing - Show & Tell for Makers & Creators</title>
+    <title>Demo Camp Lansing - Showcasing Lansing's Awesome Tech Community</title>
     <style>
         * {
             margin: 0;
@@ -65,6 +65,43 @@
             opacity: 0.8;
         }
 
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1000;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: all 0.3s ease;
+            border-radius: 3px;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Prevent body scroll when menu is open */
+        body.menu-open {
+            overflow: hidden;
+        }
+
         .speaker-signup-header {
             background: #ff6b6b !important;
             padding: 0.5rem 1rem !important;
@@ -87,14 +124,14 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: clamp(2rem, 5vw + 1rem, 3.5rem);
             font-weight: bold;
             margin-bottom: 1rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .hero p {
-            font-size: 1.3rem;
+            font-size: clamp(1rem, 2vw + 0.5rem, 1.3rem);
             margin-bottom: 2rem;
             opacity: 0.9;
             max-width: 800px;
@@ -134,7 +171,7 @@
         }
 
         .about-text h2 {
-            font-size: 2.5rem;
+            font-size: clamp(1.75rem, 3vw + 0.5rem, 2.5rem);
             color: #333;
             margin-bottom: 1.5rem;
         }
@@ -180,6 +217,61 @@
             color: #666;
         }
 
+        /* Why Demo Camp Section */
+        .why-democamp {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .why-democamp h2 {
+            text-align: center;
+            font-size: clamp(1.75rem, 3vw + 0.5rem, 2.5rem);
+            margin-bottom: 2rem;
+        }
+
+        .why-democamp-intro {
+            text-align: center;
+            font-size: 1.2rem;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            opacity: 0.95;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .why-card {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .why-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.15);
+        }
+
+        .why-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .why-card p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
         /* Who Should Attend */
         .audience {
             padding: 4rem 0;
@@ -189,7 +281,7 @@
 
         .audience h2 {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: clamp(1.75rem, 3vw + 0.5rem, 2.5rem);
             margin-bottom: 3rem;
         }
 
@@ -221,7 +313,7 @@
 
         .event-info h2 {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: clamp(1.75rem, 3vw + 0.5rem, 2.5rem);
             margin-bottom: 3rem;
             color: #333;
         }
@@ -260,7 +352,7 @@
         }
 
         .community h2 {
-            font-size: 2.5rem;
+            font-size: clamp(1.75rem, 3vw + 0.5rem, 2.5rem);
             margin-bottom: 2rem;
         }
 
@@ -313,7 +405,7 @@
         }
 
         .speaker-text h2 {
-            font-size: 2.5rem;
+            font-size: clamp(1.75rem, 3vw + 0.5rem, 2.5rem);
             margin-bottom: 1.5rem;
         }
 
@@ -355,7 +447,61 @@
         }
 
  
-  @media only screen and (max-width: 500px) {
+         /* Very small screens */
+        @media (max-width: 400px) {
+            /* Reduce section padding further */
+            .hero,
+            .about,
+            .why-democamp,
+            .audience,
+            .event-info,
+            .community,
+            .speaker-signup {
+                padding: 2rem 0;
+            }
+
+            /* Tighter container padding */
+            .container {
+                padding: 0 10px;
+            }
+
+            /* Smaller grid gaps */
+            .why-grid,
+            .audience-grid,
+            .info-grid {
+                gap: 1rem;
+            }
+
+            /* Reduce card padding */
+            .why-card,
+            .audience-card,
+            .info-card,
+            .feature {
+                padding: 1.25rem;
+            }
+
+            /* Mobile nav width adjustment */
+            nav {
+                width: 80%;
+            }
+
+            /* Feature icons */
+            .feature-icon {
+                font-size: 2.5rem;
+            }
+
+            .benefit-icon {
+                font-size: 1.75rem;
+                min-width: 40px;
+            }
+
+            /* Logo size */
+            .logo {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
 
         .speaker-content {
             align-items: center;
@@ -398,7 +544,7 @@
         }
 
         .speaker-cta h3 {
-            font-size: 2rem;
+            font-size: clamp(1.5rem, 2.5vw + 0.5rem, 2rem);
             margin-bottom: 1rem;
         }
 
@@ -459,29 +605,137 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            /* Show mobile menu toggle */
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            /* Mobile navigation styles */
+            .header-content {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                max-width: 300px;
+                height: 100vh;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                padding: 5rem 2rem 2rem;
+                transition: right 0.3s ease;
+                box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+                overflow-y: auto;
+            }
+
+            nav.active {
+                right: 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            nav li {
+                width: 100%;
+            }
+
+            nav a {
+                display: block;
+                padding: 0.5rem 1rem;
+                font-size: 1.1rem;
+            }
+
+            .speaker-signup-header {
+                display: block;
+                text-align: center;
+            }
+
+            /* Hero section */
             .hero h1 {
                 font-size: 2.5rem;
             }
-            
+
             .hero p {
                 font-size: 1.1rem;
             }
-            
+
+            /* About section */
             .about-content {
                 grid-template-columns: 1fr;
             }
-            
+
             .about-features {
                 grid-template-columns: 1fr;
             }
-            
-            nav ul {
+
+            /* Section padding reduction */
+            .hero,
+            .about,
+            .why-democamp,
+            .audience,
+            .event-info,
+            .community,
+            .speaker-signup {
+                padding: 2.5rem 0;
+            }
+
+            /* Grid gap reduction */
+            .why-grid,
+            .audience-grid,
+            .info-grid {
+                gap: 1.5rem;
+            }
+
+            .about-content {
+                gap: 2rem;
+            }
+
+            .about-features {
+                gap: 1.5rem;
+            }
+
+            /* Container padding */
+            .container {
+                padding: 0 15px;
+            }
+
+            /* Card padding */
+            .why-card,
+            .audience-card,
+            .info-card,
+            .feature {
+                padding: 1.5rem;
+            }
+
+            /* Community links spacing */
+            .community-links {
                 gap: 1rem;
             }
-            
-            .header-content {
-                flex-direction: column;
-                gap: 1rem;
+
+            /* Touch target optimization */
+            .cta-button,
+            .speaker-button {
+                min-height: 48px;
+                padding: 0.875rem 2rem;
+                font-size: 1rem;
+            }
+
+            .community-link {
+                min-height: 44px;
+                padding: 0.75rem 1.5rem;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            nav a {
+                min-height: 44px;
+                display: flex;
+                align-items: center;
             }
         }
 
@@ -497,8 +751,73 @@
             }
         }
 
+        @keyframes iconBounce {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
         .fade-in {
             animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Icon hover animation */
+        .feature-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover .feature-icon {
+            animation: iconBounce 0.6s ease;
+        }
+
+        /* Staggered animation for why cards */
+        .why-card {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .why-card.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Audience card stagger */
+        .audience-card {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .audience-card.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Accessibility: Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+
+            .why-card,
+            .audience-card {
+                opacity: 1;
+                transform: none;
+            }
+
+            section {
+                opacity: 1 !important;
+                transform: none !important;
+            }
         }
     </style>
 </head>
@@ -507,9 +826,15 @@
         <div class="container">
             <div class="header-content">
                 <a href="#" class="logo">Demo Camp Lansing</a>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
                 <nav>
                     <ul>
                         <li><a href="#about">About</a></li>
+                        <li><a href="#why">Why</a></li>
                         <li><a href="#audience">Who</a></li>
                         <li><a href="#info">Event Info</a></li>
                         <li><a href="#community">Community</a></li>
@@ -523,8 +848,9 @@
     <section class="hero">
         <div class="container">
             <h1 class="fade-in">Demo Camp Lansing</h1>
-            <p class="fade-in">Show & Tell for Makers, Builders, and Dreamers</p>
-            <a href="https://www.eventbrite.com/e/demo-camp-lansing-2025-tickets-1740630686239" class="cta-button fade-in">Join the Next Event</a>
+            <p class="fade-in">Come See the Amazing Things Your Neighbors Are Building</p>
+            <p class="fade-in" style="font-size: 1.1rem; margin-top: 0.5rem;">From breakthrough startups to established companies to weekend passion projects - discover the incredible innovation happening right here in Lansing</p>
+            <a href="https://www.eventbrite.com/e/demo-camp-lansing-2025-tickets-1740630686239" class="cta-button fade-in">Get Your Free Ticket</a>
         </div>
     </section>
 
@@ -533,30 +859,65 @@
             <div class="about-content">
                 <div class="about-text">
                     <h2>What is Demo Camp?</h2>
-                    <p>Demo Camp Lansing is where the local tech community comes together to showcase their latest creations. Whether you've built an app, designed a website, created a gadget, or launched a startup, this is your stage to share it with fellow makers and innovators.</p>
-                    <p>In a relaxed, friendly atmosphere, you'll see cutting-edge technology, meet passionate creators, and discover what's emerging in our vibrant tech scene. It's part show-and-tell, part networking, and all about celebrating the spirit of creation.</p>
+                    <p>Demo Camp Lansing is where our awesome tech community comes together to showcase what they've built. From established companies demonstrating their latest innovations to startups unveiling game-changing products, from individual creators sharing passion projects to teams presenting enterprise solutions - this is your stage to share with fellow innovators.</p>
+                    <p>In a relaxed, friendly atmosphere, you'll experience the full breadth of Lansing's tech ecosystem. See cutting-edge technology from MSU researchers and local companies to garage tinkerers, meet passionate creators from all backgrounds, and discover what's emerging in our thriving, diverse tech scene. It's part show-and-tell, part networking, and all about celebrating the incredible things our community is building.</p>
                 </div>
                 <div class="about-features">
                     <div class="feature">
+                        <div class="feature-icon">🌟</div>
+                        <h3>Community Showcase</h3>
+                        <p>See amazing innovations from MSU researchers and established companies to garage tinkerers all in one place</p>
+                    </div>
+                    <div class="feature">
                         <div class="feature-icon">🚀</div>
                         <h3>Launch & Learn</h3>
-                        <p>Showcase your projects and get valuable feedback from the community</p>
+                        <p>Present your work - whether it's a corporate product or personal project - and get valuable feedback</p>
                     </div>
                     <div class="feature">
                         <div class="feature-icon">🤝</div>
                         <h3>Connect & Collaborate</h3>
-                        <p>Network with like-minded developers, designers, and entrepreneurs</p>
+                        <p>Network across the entire spectrum - from enterprise teams to solo makers</p>
                     </div>
                     <div class="feature">
                         <div class="feature-icon">💡</div>
-                        <h3>Inspire & Innovate</h3>
-                        <p>Discover new technologies and get inspired by others' creativity</p>
+                        <h3>Open to All</h3>
+                        <p>No barriers - companies, startups, and individuals all share the same stage</p>
                     </div>
-                    <div class="feature">
-                        <div class="feature-icon">🎯</div>
-                        <h3>Casual & Fun</h3>
-                        <p>Enjoy a relaxed atmosphere where everyone is welcome to participate</p>
-                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why" class="why-democamp">
+        <div class="container">
+            <h2>Why You Should Be There</h2>
+            <p class="why-democamp-intro">
+                You'll be amazed at what's being built right here in Lansing! Demo Camp is where you'll discover that breakthrough app your neighbor has been coding, see the innovative solution a local company just launched, and meet the creators who are putting Lansing on the tech map. Don't miss out on being part of this exciting community.
+            </p>
+            <div class="why-grid">
+                <div class="why-card">
+                    <h3>💪 See What's Really Happening</h3>
+                    <p>You'll see live demos from established local companies right alongside breakthrough startups and creative individual projects. In one evening, experience the full spectrum of innovation across automotive, insurance, healthcare, education, and beyond - all from your own backyard.</p>
+                </div>
+                <div class="why-card">
+                    <h3>🤝 Collaborative Spirit</h3>
+                    <p>Unlike competitive pitch events, Demo Camp is about sharing and learning together. Companies share insights with startups, experienced developers mentor newcomers, and everyone celebrates each other's successes.</p>
+                </div>
+                <div class="why-card">
+                    <h3>🌱 Growing Ecosystem</h3>
+                    <p>With MSU's tech talent pipeline, growing startup scene, and established corporate tech centers, Lansing is becoming a hidden gem in the Midwest tech landscape. Be part of something special as it grows.</p>
+                </div>
+                <div class="why-card">
+                    <h3>🎯 Real Connections</h3>
+                    <p>This isn't just another networking event. Form genuine connections with people who might become your co-founder, your next hire, your mentor, or simply a friend who shares your passion for building.</p>
+                </div>
+                <div class="why-card">
+                    <h3>🚀 Your Launch Pad</h3>
+                    <p>Many successful products and partnerships in Lansing started with a Demo Camp presentation. Got something you've built? This is your chance to show it off, get real feedback, find collaborators, or even meet your next hire. Plus, it's way more fun than keeping it to yourself!</p>
+                </div>
+                <div class="why-card">
+                    <h3>🏆 No Barriers</h3>
+                    <p>Free to attend, open to all skill levels, welcoming to every background. If you've built something - anything - that you're excited about, we want to see it. No gatekeeping, just genuine enthusiasm for innovation.</p>
                 </div>
             </div>
         </div>
@@ -565,7 +926,16 @@
     <section id="audience" class="audience">
         <div class="container">
             <h2>Everyone is Welcome!</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.95; max-width: 800px; margin-left: auto; margin-right: auto;">Whether you're here to present your work or just want to see what's happening in Lansing's tech scene - you belong here!</p>
             <div class="audience-grid">
+                <div class="audience-card">
+                    <h3>🏢 Companies</h3>
+                    <p>Demo your team's latest features, products, or innovations - from established tech companies to local businesses</p>
+                </div>
+                <div class="audience-card">
+                    <h3>🚀 Entrepreneurs</h3>
+                    <p>Showcase your startup, scale-up, or business venture at any stage</p>
+                </div>
                 <div class="audience-card">
                     <h3>👩‍💻 Developers</h3>
                     <p>Show off your latest apps, websites, or open source projects</p>
@@ -573,14 +943,6 @@
                 <div class="audience-card">
                     <h3>🎨 Designers</h3>
                     <p>Share your UI/UX work, design systems, or creative projects</p>
-                </div>
-                <div class="audience-card">
-                    <h3>📈 Marketers</h3>
-                    <p>Demo your campaigns, tools, or growth strategies</p>
-                </div>
-                <div class="audience-card">
-                    <h3>🚀 Entrepreneurs</h3>
-                    <p>Pitch your startup or showcase your latest product</p>
                 </div>
                 <div class="audience-card">
                     <h3>🔧 Makers</h3>
@@ -596,7 +958,7 @@
 
     <section id="info" class="event-info">
         <div class="container">
-            <h2>Event Details</h2>
+            <h2>Join Us - It's Free!</h2>
             <div class="info-grid">
                 <div class="info-card">
                     <h3>📅 When</h3>
@@ -610,11 +972,11 @@
                 </div>
                 <div class="info-card">
                     <h3>⏰ Format</h3>
-                    <p>5-minute demos followed by Q&A and networking time</p>
+                    <p>5-7 minute demos followed by Q&A and networking. Open to companies, startups, and individuals alike!</p>
                 </div>
                 <div class="info-card">
                     <h3>💰 Cost</h3>
-                    <p>Free to attend! Just bring your enthusiasm and maybe a project to share</p>
+                    <p>Completely FREE! Whether you're bringing your whole team or coming solo - just show up ready to be amazed by your neighbors' creativity</p>
                 </div>
             </div>
         </div>
@@ -624,14 +986,14 @@
         <div class="container">
             <div class="speaker-content">
                 <div class="speaker-text">
-                    <h2>Ready to Share Your Work?</h2>
-                    <p>Have something cool to demo? We'd love to see it! Whether it's a side project, startup idea, creative experiment, or professional work - if you built it, we want to hear about it.</p>
+                    <h2>Built Something? Share It With Us!</h2>
+                    <p>Seriously - we want to see what you've made! Whether your company just shipped a new feature, your startup finally launched, or you built something fun over the weekend - your fellow creators would love to see it. No project is too big or too small. If you're proud of it, we want to celebrate it with you!</p>
                     <div class="speaker-benefits">
                         <div class="benefit">
                             <span class="benefit-icon">🎤</span>
                             <div>
-                                <h4>7-Minute Spotlight</h4>
-                                <p>Quick, focused demos that keep energy high</p>
+                                <h4>5-7 Minute Spotlight</h4>
+                                <p>Quick, focused demos that keep energy high and showcase your work</p>
                             </div>
                         </div>
                         <div class="benefit">
@@ -651,9 +1013,10 @@
                     </div>
                 </div>
                 <div class="speaker-cta">
-                    <h3>Sign Up to Present</h3>
-                    <p>Slots are limited, so reserve your spot early!</p>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSf3YtiLNwD3f67_0SS4BR1qITtlnkCSRC_PwiSMfHwGZWVQlA/viewform?usp=dialog" target="_blank" and rel="noopener noreferrer" class="speaker-button">Apply to Present</a>
+                    <h3>Let's See What You've Got!</h3>
+                    <p>Spots fill up fast - grab yours now and show the Lansing tech community what you've been working on!</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSf3YtiLNwD3f67_0SS4BR1qITtlnkCSRC_PwiSMfHwGZWVQlA/viewform?usp=dialog" target="_blank" and rel="noopener noreferrer" class="speaker-button">I Want to Demo!</a>
+                    <p class="speaker-note">Don't be shy - we're a friendly crowd and we genuinely want to see your work!</p>
                 </div>
             </div>
         </div>
@@ -661,8 +1024,8 @@
 
     <section id="community" class="community">
         <div class="container">
-            <h2>Part of Lansing's Tech Community</h2>
-            <p>Demo Camp Lansing is proudly connected to the vibrant tech ecosystem in Mid-Michigan. Join us and discover all the amazing groups and events happening in our area.</p>
+            <h2>Part of Lansing's Awesome Tech Community</h2>
+            <p>Demo Camp Lansing celebrates the incredible diversity and strength of Mid-Michigan's tech ecosystem. From enterprise innovators to student developers, from corporate teams to solo creators - we're all part of something special. Join us and connect with the amazing groups making Lansing a hidden gem in the tech world.</p>
             <div class="community-links">
                 <a href="https://www.lansing.codes/" class="community-link" target="_blank">Lansing Codes</a>
                 <a href="https://www.mitn.org" class="community-link" target="_blank">Michigan Technology Network</a>
@@ -681,6 +1044,25 @@
     </footer>
 
     <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const nav = document.querySelector('nav');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenuToggle.classList.toggle('active');
+            nav.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuToggle.classList.remove('active');
+                nav.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            });
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -721,6 +1103,46 @@
         // Hero section is already visible
         document.querySelector('.hero').style.opacity = '1';
         document.querySelector('.hero').style.transform = 'translateY(0)';
+
+        // Staggered animation for why cards
+        const whyCardObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const cards = entry.target.querySelectorAll('.why-card');
+                    cards.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.classList.add('animate');
+                        }, index * 150); // 150ms delay between each card
+                    });
+                    whyCardObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        const whySection = document.querySelector('.why-democamp');
+        if (whySection) {
+            whyCardObserver.observe(whySection);
+        }
+
+        // Staggered animation for audience cards
+        const audienceCardObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const cards = entry.target.querySelectorAll('.audience-card');
+                    cards.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.classList.add('animate');
+                        }, index * 100); // 100ms delay between each card
+                    });
+                    audienceCardObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        const audienceSection = document.querySelector('.audience');
+        if (audienceSection) {
+            audienceCardObserver.observe(audienceSection);
+        }
     </script>
 </body>
 </html>
