@@ -65,6 +65,43 @@
             opacity: 0.8;
         }
 
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1000;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: all 0.3s ease;
+            border-radius: 3px;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Prevent body scroll when menu is open */
+        body.menu-open {
+            overflow: hidden;
+        }
+
         .speaker-signup-header {
             background: #ff6b6b !important;
             padding: 0.5rem 1rem !important;
@@ -87,14 +124,14 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: clamp(2rem, 5vw + 1rem, 3.5rem);
             font-weight: bold;
             margin-bottom: 1rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .hero p {
-            font-size: 1.3rem;
+            font-size: clamp(1rem, 2vw + 0.5rem, 1.3rem);
             margin-bottom: 2rem;
             opacity: 0.9;
             max-width: 800px;
@@ -134,7 +171,7 @@
         }
 
         .about-text h2 {
-            font-size: 2.5rem;
+            font-size: clamp(1.75rem, 3vw + 0.5rem, 2.5rem);
             color: #333;
             margin-bottom: 1.5rem;
         }
@@ -189,7 +226,7 @@
 
         .why-democamp h2 {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: clamp(1.75rem, 3vw + 0.5rem, 2.5rem);
             margin-bottom: 2rem;
         }
 
@@ -244,7 +281,7 @@
 
         .audience h2 {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: clamp(1.75rem, 3vw + 0.5rem, 2.5rem);
             margin-bottom: 3rem;
         }
 
@@ -276,7 +313,7 @@
 
         .event-info h2 {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: clamp(1.75rem, 3vw + 0.5rem, 2.5rem);
             margin-bottom: 3rem;
             color: #333;
         }
@@ -315,7 +352,7 @@
         }
 
         .community h2 {
-            font-size: 2.5rem;
+            font-size: clamp(1.75rem, 3vw + 0.5rem, 2.5rem);
             margin-bottom: 2rem;
         }
 
@@ -368,7 +405,7 @@
         }
 
         .speaker-text h2 {
-            font-size: 2.5rem;
+            font-size: clamp(1.75rem, 3vw + 0.5rem, 2.5rem);
             margin-bottom: 1.5rem;
         }
 
@@ -410,7 +447,61 @@
         }
 
  
-  @media only screen and (max-width: 500px) {
+         /* Very small screens */
+        @media (max-width: 400px) {
+            /* Reduce section padding further */
+            .hero,
+            .about,
+            .why-democamp,
+            .audience,
+            .event-info,
+            .community,
+            .speaker-signup {
+                padding: 2rem 0;
+            }
+
+            /* Tighter container padding */
+            .container {
+                padding: 0 10px;
+            }
+
+            /* Smaller grid gaps */
+            .why-grid,
+            .audience-grid,
+            .info-grid {
+                gap: 1rem;
+            }
+
+            /* Reduce card padding */
+            .why-card,
+            .audience-card,
+            .info-card,
+            .feature {
+                padding: 1.25rem;
+            }
+
+            /* Mobile nav width adjustment */
+            nav {
+                width: 80%;
+            }
+
+            /* Feature icons */
+            .feature-icon {
+                font-size: 2.5rem;
+            }
+
+            .benefit-icon {
+                font-size: 1.75rem;
+                min-width: 40px;
+            }
+
+            /* Logo size */
+            .logo {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
 
         .speaker-content {
             align-items: center;
@@ -453,7 +544,7 @@
         }
 
         .speaker-cta h3 {
-            font-size: 2rem;
+            font-size: clamp(1.5rem, 2.5vw + 0.5rem, 2rem);
             margin-bottom: 1rem;
         }
 
@@ -514,29 +605,137 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            /* Show mobile menu toggle */
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            /* Mobile navigation styles */
+            .header-content {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                max-width: 300px;
+                height: 100vh;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                padding: 5rem 2rem 2rem;
+                transition: right 0.3s ease;
+                box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+                overflow-y: auto;
+            }
+
+            nav.active {
+                right: 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            nav li {
+                width: 100%;
+            }
+
+            nav a {
+                display: block;
+                padding: 0.5rem 1rem;
+                font-size: 1.1rem;
+            }
+
+            .speaker-signup-header {
+                display: block;
+                text-align: center;
+            }
+
+            /* Hero section */
             .hero h1 {
                 font-size: 2.5rem;
             }
-            
+
             .hero p {
                 font-size: 1.1rem;
             }
-            
+
+            /* About section */
             .about-content {
                 grid-template-columns: 1fr;
             }
-            
+
             .about-features {
                 grid-template-columns: 1fr;
             }
-            
-            nav ul {
+
+            /* Section padding reduction */
+            .hero,
+            .about,
+            .why-democamp,
+            .audience,
+            .event-info,
+            .community,
+            .speaker-signup {
+                padding: 2.5rem 0;
+            }
+
+            /* Grid gap reduction */
+            .why-grid,
+            .audience-grid,
+            .info-grid {
+                gap: 1.5rem;
+            }
+
+            .about-content {
+                gap: 2rem;
+            }
+
+            .about-features {
+                gap: 1.5rem;
+            }
+
+            /* Container padding */
+            .container {
+                padding: 0 15px;
+            }
+
+            /* Card padding */
+            .why-card,
+            .audience-card,
+            .info-card,
+            .feature {
+                padding: 1.5rem;
+            }
+
+            /* Community links spacing */
+            .community-links {
                 gap: 1rem;
             }
-            
-            .header-content {
-                flex-direction: column;
-                gap: 1rem;
+
+            /* Touch target optimization */
+            .cta-button,
+            .speaker-button {
+                min-height: 48px;
+                padding: 0.875rem 2rem;
+                font-size: 1rem;
+            }
+
+            .community-link {
+                min-height: 44px;
+                padding: 0.75rem 1.5rem;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            nav a {
+                min-height: 44px;
+                display: flex;
+                align-items: center;
             }
         }
 
@@ -597,6 +796,29 @@
             opacity: 1;
             transform: translateX(0);
         }
+
+        /* Accessibility: Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+
+            .why-card,
+            .audience-card {
+                opacity: 1;
+                transform: none;
+            }
+
+            section {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -604,6 +826,11 @@
         <div class="container">
             <div class="header-content">
                 <a href="#" class="logo">Demo Camp Lansing</a>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
                 <nav>
                     <ul>
                         <li><a href="#about">About</a></li>
@@ -817,6 +1044,25 @@
     </footer>
 
     <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const nav = document.querySelector('nav');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenuToggle.classList.toggle('active');
+            nav.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuToggle.classList.remove('active');
+                nav.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            });
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
