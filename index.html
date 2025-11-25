@@ -102,19 +102,6 @@
             overflow: hidden;
         }
 
-        .speaker-signup-header {
-            background: #ff6b6b !important;
-            padding: 0.5rem 1rem !important;
-            border-radius: 20px !important;
-            font-weight: bold !important;
-        }
-
-        .speaker-signup-header:hover {
-            background: #ff5252 !important;
-            opacity: 1 !important;
-            transform: translateY(-1px);
-        }
-
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -287,7 +274,8 @@
 
         .audience-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-areas: "a b c";
+
             gap: 2rem;
         }
 
@@ -320,7 +308,7 @@
 
         .info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-areas: "a b";
             gap: 2rem;
         }
 
@@ -383,69 +371,6 @@
             background: rgba(255,255,255,0.2);
             transform: translateY(-2px);
         }
-
-        /* Speaker Signup Section */
-        .speaker-signup {
-            padding: 4rem 0;
-            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-
-        .speaker-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .speaker-text {
-            margin: 0 auto;
-            width: 85%;
-
-        }
-
-        .speaker-text h2 {
-            font-size: clamp(1.75rem, 3vw + 0.5rem, 2.5rem);
-            margin-bottom: 1.5rem;
-        }
-
-        .speaker-text > p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .speaker-benefits {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .benefit {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            background: rgba(255,255,255,0.1);
-            padding: 1.5rem;
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-        }
-
-        .benefit-icon {
-            font-size: 2rem;
-            min-width: 50px;
-        }
-
-        .benefit h4 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .benefit p {
-            opacity: 0.8;
-            font-size: 0.95rem;
-        }
-
  
          /* Very small screens */
         @media (max-width: 400px) {
@@ -488,11 +413,6 @@
             /* Feature icons */
             .feature-icon {
                 font-size: 2.5rem;
-            }
-
-            .benefit-icon {
-                font-size: 1.75rem;
-                min-width: 40px;
             }
 
             /* Logo size */
@@ -838,7 +758,6 @@
                         <li><a href="#audience">Who</a></li>
                         <li><a href="#info">Event Info</a></li>
                         <li><a href="#community">Community</a></li>
-                        <li><a href="#speak" class="speaker-signup-header">Present</a></li>
                     </ul>
                 </nav>
             </div>
@@ -933,25 +852,26 @@
                     <p>Demo your team's latest features, products, or innovations - from established tech companies to local businesses</p>
                 </div>
                 <div class="audience-card">
-                    <h3>🚀 Entrepreneurs</h3>
-                    <p>Showcase your startup, scale-up, or business venture at any stage</p>
+                    <h3>🎨 Designers</h3>
+                    <p>Share your UI/UX work, design systems, or creative projects</p>
                 </div>
                 <div class="audience-card">
                     <h3>👩‍💻 Developers</h3>
                     <p>Show off your latest apps, websites, or open source projects</p>
                 </div>
+                 <div class="audience-card">
+                    <h3>🌟 Enthusiasts</h3>
+                    <p>Come to learn, network, and be inspired by the community</p>
+                </div>
                 <div class="audience-card">
-                    <h3>🎨 Designers</h3>
-                    <p>Share your UI/UX work, design systems, or creative projects</p>
+                    <h3>🚀 Entrepreneurs</h3>
+                    <p>Showcase your startup, scale-up, or business venture at any stage</p>
                 </div>
                 <div class="audience-card">
                     <h3>🔧 Makers</h3>
                     <p>Present your hardware projects, IoT devices, or inventions</p>
                 </div>
-                <div class="audience-card">
-                    <h3>🌟 Enthusiasts</h3>
-                    <p>Come to learn, network, and be inspired by the community</p>
-                </div>
+               
             </div>
         </div>
     </section>
@@ -977,46 +897,6 @@
                 <div class="info-card">
                     <h3>💰 Cost</h3>
                     <p>Completely FREE! Whether you're bringing your whole team or coming solo - just show up ready to be amazed by your neighbors' creativity</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="speak" class="speaker-signup">
-        <div class="container">
-            <div class="speaker-content">
-                <div class="speaker-text">
-                    <h2>Built Something? Share It With Us!</h2>
-                    <p>Seriously - we want to see what you've made! Whether your company just shipped a new feature, your startup finally launched, or you built something fun over the weekend - your fellow creators would love to see it. No project is too big or too small. If you're proud of it, we want to celebrate it with you!</p>
-                    <div class="speaker-benefits">
-                        <div class="benefit">
-                            <span class="benefit-icon">🎤</span>
-                            <div>
-                                <h4>5-7 Minute Spotlight</h4>
-                                <p>Quick, focused demos that keep energy high and showcase your work</p>
-                            </div>
-                        </div>
-                        <div class="benefit">
-                            <span class="benefit-icon">💬</span>
-                            <div>
-                                <h4>Valuable Feedback</h4>
-                                <p>Get insights from fellow creators and potential users</p>
-                            </div>
-                        </div>
-                        <div class="benefit">
-                            <span class="benefit-icon">🌟</span>
-                            <div>
-                                <h4>Build Your Reputation</h4>
-                                <p>Establish yourself in the local tech community</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="speaker-cta">
-                    <h3>Let's See What You've Got!</h3>
-                    <p>Spots fill up fast - grab yours now and show the Lansing tech community what you've been working on!</p>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSf3YtiLNwD3f67_0SS4BR1qITtlnkCSRC_PwiSMfHwGZWVQlA/viewform?usp=dialog" target="_blank" and rel="noopener noreferrer" class="speaker-button">I Want to Demo!</a>
-                    <p class="speaker-note">Don't be shy - we're a friendly crowd and we genuinely want to see your work!</p>
                 </div>
             </div>
         </div>
