@@ -259,39 +259,34 @@
             line-height: 1.6;
         }
 
-        /* Who Should Attend */
-        .audience {
+        /* Who will be presenting */
+        .event {
             padding: 4rem 0;
             background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
             color: white;
         }
 
-        .audience h2 {
-            text-align: center;
-            font-size: clamp(1.75rem, 3vw + 0.5rem, 2.5rem);
-            margin-bottom: 3rem;
-        }
-
-        .audience-grid {
+        .event-grid {
             display: grid;
-            grid-template-areas: "a b c";
-
-            gap: 2rem;
+            grid-template-columns: 1fr 4fr;
+            gap: 1rem;
         }
 
-        .audience-card {
+        .event-card {
             background: rgba(255,255,255,0.1);
-            padding: 2rem;
+            padding: 1rem;
             border-radius: 15px;
-            text-align: center;
+            text-align: left;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.2);
         }
-
-        .audience-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+        .event-schedule {
+            text-align: center;
+            font-size: clamp(1.75rem, 3vw + 0.5rem, 2.5rem);
+            margin-bottom: 2rem;
+            color: #fff;
         }
+
 
         /* Event Info */
         .event-info {
@@ -378,7 +373,7 @@
             .hero,
             .about,
             .why-democamp,
-            .audience,
+            .event,
             .event-info,
             .community,
             .speaker-signup {
@@ -392,14 +387,14 @@
 
             /* Smaller grid gaps */
             .why-grid,
-            .audience-grid,
+            .event-grid,
             .info-grid {
                 gap: 1rem;
             }
 
             /* Reduce card padding */
             .why-card,
-            .audience-card,
+            .event-card,
             .info-card,
             .feature {
                 padding: 1.25rem;
@@ -596,7 +591,7 @@
             .hero,
             .about,
             .why-democamp,
-            .audience,
+            .event,
             .event-info,
             .community,
             .speaker-signup {
@@ -605,7 +600,7 @@
 
             /* Grid gap reduction */
             .why-grid,
-            .audience-grid,
+            .event-grid,
             .info-grid {
                 gap: 1.5rem;
             }
@@ -625,7 +620,7 @@
 
             /* Card padding */
             .why-card,
-            .audience-card,
+            .event-card,
             .info-card,
             .feature {
                 padding: 1.5rem;
@@ -705,14 +700,14 @@
             transform: translateY(0);
         }
 
-        /* Audience card stagger */
-        .audience-card {
+        /* Event card stagger */
+        .event-card {
             opacity: 0;
             transform: translateX(-20px);
             transition: opacity 0.5s ease, transform 0.5s ease;
         }
 
-        .audience-card.animate {
+        .event-card.animate {
             opacity: 1;
             transform: translateX(0);
         }
@@ -729,7 +724,7 @@
             }
 
             .why-card,
-            .audience-card {
+            .event-card {
                 opacity: 1;
                 transform: none;
             }
@@ -755,7 +750,7 @@
                     <ul>
                         <li><a href="#about">About</a></li>
                         <li><a href="#why">Why</a></li>
-                        <li><a href="#audience">Who</a></li>
+                        <li><a href="#event">Who</a></li>
                         <li><a href="#info">Event Info</a></li>
                         <li><a href="#community">Community</a></li>
                     </ul>
@@ -842,36 +837,118 @@
         </div>
     </section>
 
-    <section id="audience" class="audience">
+    <section id="event" class="event">
         <div class="container">
-            <h2>Everyone is Welcome!</h2>
-            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.95; max-width: 800px; margin-left: auto; margin-right: auto;">Whether you're here to present your work or just want to see what's happening in Lansing's tech scene - you belong here!</p>
-            <div class="audience-grid">
-                <div class="audience-card">
-                    <h3>🏢 Companies</h3>
-                    <p>Demo your team's latest features, products, or innovations - from established tech companies to local businesses</p>
+            <h2 class="event-schedule">Event Schedule</h2>
+            <div class="event-grid">
+                <div class="event-card">
+                    <h3>4:30 - 5:25 PM</h3>
                 </div>
-                <div class="audience-card">
-                    <h3>🎨 Designers</h3>
-                    <p>Share your UI/UX work, design systems, or creative projects</p>
+                <div class="event-card">
+                    <strong>Doors open!</strong> Join us for networking, refreshments, and exploring demo stations from Lansing's tech community.
                 </div>
-                <div class="audience-card">
-                    <h3>👩‍💻 Developers</h3>
-                    <p>Show off your latest apps, websites, or open source projects</p>
+                <div class="event-card">
+                    <h3>5:25 - 5:30 PM</h3>
                 </div>
-                 <div class="audience-card">
-                    <h3>🌟 Enthusiasts</h3>
-                    <p>Come to learn, network, and be inspired by the community</p>
+                <div class="event-card">
+                    <strong>Welcome and opening remarks</strong> to kick off the evening.
                 </div>
-                <div class="audience-card">
-                    <h3>🚀 Entrepreneurs</h3>
-                    <p>Showcase your startup, scale-up, or business venture at any stage</p>
+                <div class="event-card">
+                    <h3>5:30 - 5:37PM</h3>
                 </div>
-                <div class="audience-card">
-                    <h3>🔧 Makers</h3>
-                    <p>Present your hardware projects, IoT devices, or inventions</p>
+                <div class="event-card">
+                    MuniCheck Mobile Inspection App
                 </div>
-               
+                <div class="event-card">
+                    <h3>5:37 - 5:44 PM</h3>
+                </div>
+                <div class="event-card">
+                    Making Research Fun
+                </div>
+                <div class="event-card">
+                    <h3>5:44 - 5:51 PM</h3>
+                </div>
+                <div class="event-card">
+                   Memory Sketch
+                </div>
+                <div class="event-card">
+                    <h3>5:51 - 5:58 PM</h3>
+                </div>
+                <div class="event-card">
+                   Lansing Tech Studio - Robots on a Mission
+                </div>
+                <div class="event-card">
+                    <h3>5:58 - 6:05 PM</h3>
+                </div>
+                <div class="event-card">
+                   Waste to Nourish (W2N)
+                </div>
+                <div class="event-card">
+                    <h3>6:05 - 6:12 PM</h3>
+                </div>
+                <div class="event-card">
+                   Quantum Tunneling - A "New, Clear" Alternative to Nuclear Energy
+                </div>
+                <div class="event-card">
+                    <h3>6:12 - 6:20 PM</h3>
+                </div>
+                <div class="event-card">
+                   <strong>Discussion and Q&A</strong>
+                </div>
+                <div class="event-card">
+                    <h3>6:20 - 6:35 PM</h3>
+                </div>
+                <div class="event-card">
+                   <strong>Networking Break</strong> - Explore Demos and Connect
+                </div>
+                <div class="event-card">
+                    <h3>6:35 - 6:42 PM</h3>
+                </div>
+                <div class="event-card">
+                    Preflight for Grants: Find Fit, Flag Risks, Submit with Confidence
+                </div>
+                <div class="event-card">
+                    <h3>6:42 - 6:49 PM</h3>
+                </div>
+                <div class="event-card">
+                   Guideily - AI Career Readiness Suite
+                </div>
+                <div class="event-card">
+                    <h3>6:49 - 6:56 PM</h3>
+                </div>
+                <div class="event-card">
+                   Claude Builders Club
+                </div>
+                <div class="event-card">
+                    <h3>6:56 - 7:03 PM</h3> 
+                </div>
+                <div class="event-card">
+                   AbleVu for Accessibility
+                </div>
+                <div class="event-card">
+                    <h3>7:03 - 7:10 PM</h3>
+                </div>
+                <div class="event-card">
+                   Trickstir
+                </div>
+                <div class="event-card">
+                    <h3>7:10 - 7:20 PM</h3>
+                </div>
+                <div class="event-card">
+                   <strong>Q&A and Closing Remarks</strong>
+                </div>
+                <div class="event-card">
+                    <h3>7:20 - 7:30 PM</h3>
+                </div>
+                <div class="event-card">
+                   <strong>Group Photo and Farewell</strong>
+                </div>
+                <div class="event-card">
+                    <h3>7:30 - 7:50 PM</h3>
+                </div>
+                <div class="event-card">
+                   <strong>Clean up</strong>. Please help if you are able. Thank you for being part of Demo Camp Lansing!
+                </div>
             </div>
         </div>
     </section>
@@ -1004,24 +1081,24 @@
             whyCardObserver.observe(whySection);
         }
 
-        // Staggered animation for audience cards
-        const audienceCardObserver = new IntersectionObserver((entries) => {
+        // Staggered animation for event cards
+        const eventCardObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    const cards = entry.target.querySelectorAll('.audience-card');
+                    const cards = entry.target.querySelectorAll('.event-card');
                     cards.forEach((card, index) => {
                         setTimeout(() => {
                             card.classList.add('animate');
                         }, index * 100); // 100ms delay between each card
                     });
-                    audienceCardObserver.unobserve(entry.target);
+                    eventCardObserver.unobserve(entry.target);
                 }
             });
         }, observerOptions);
 
-        const audienceSection = document.querySelector('.audience');
-        if (audienceSection) {
-            audienceCardObserver.observe(audienceSection);
+        const eventSection = document.querySelector('.event');
+        if (eventSection) {
+            eventCardObserver.observe(eventSection);
         }
     </script>
 </body>
