@@ -259,7 +259,7 @@
             line-height: 1.6;
         }
 
-        /* Who will be presenting */
+        /* Event Schedule */
         .event {
             padding: 4rem 0;
             background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
@@ -288,7 +288,7 @@
         }
 
 
-        /* Event Info */
+        /* Info */
         .event-info {
             padding: 4rem 0;
             background: white;
@@ -303,7 +303,7 @@
 
         .info-grid {
             display: grid;
-            grid-template-areas: "a b";
+            grid-template-areas: "a b c d";
             gap: 2rem;
         }
 
@@ -312,7 +312,6 @@
             padding: 2rem;
             border-radius: 15px;
             text-align: center;
-            border-left: 5px solid #667eea;
         }
 
         .info-card h3 {
@@ -376,7 +375,7 @@
             .event,
             .event-info,
             .community,
-            .speaker-signup {
+            .sponsor {
                 padding: 2rem 0;
             }
 
@@ -396,7 +395,8 @@
             .why-card,
             .event-card,
             .info-card,
-            .feature {
+            .feature,
+            .sponsor-card {
                 padding: 1.25rem;
             }
 
@@ -417,84 +417,34 @@
         }
 
         @media only screen and (max-width: 500px) {
-
-        .speaker-content {
-            align-items: center;
-            display: block;
-            margin: 0 auto;
-            width: 95%;
         }
-
-
-      .speaker-text {
-            margin: 0 auto 10px;
-            width: 95%;
-            clear: both;
-
-        }
-
-
-        .speaker-cta {
-            margin: 0 auto;
-            clear: both;
-            width: 75%;
-            text-align: center;
-            background: rgba(255,255,255,0.1);
-            padding: 3rem 2rem;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-
-}
-
-
-        .speaker-cta {
-            text-align: center;
-            background: rgba(255,255,255,0.1);
-            padding: 3rem 2rem;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .speaker-cta h3 {
-            font-size: clamp(1.5rem, 2.5vw + 0.5rem, 2rem);
-            margin-bottom: 1rem;
-        }
-
-        .speaker-cta > p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .speaker-button {
-            display: inline-block;
-            background: #ff6b6b;
+        /*Sponsors Section */
+        .sponsor {
+            padding: 4rem 0;
+            background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
             color: white;
-            padding: 1.2rem 2.5rem;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 6px 20px rgba(255,107,107,0.4);
-            margin-bottom: 1.5rem;
         }
 
-        .speaker-button:hover {
-            background: #ff5252;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255,107,107,0.6);
+        .sponsor-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
         }
 
-        .speaker-note {
-            opacity: 0.7;
+        .sponsor-card {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 15px;
+            text-align: left;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            text-align: center;
         }
 
-      
-
+        .sponsor h2 {
+            font-size: clamp(1.75rem, 3vw + 0.5rem, 2.5rem);
+            margin-bottom: 2rem;
+        }
 
 
         /* Footer */
@@ -502,7 +452,10 @@
             background: #333;
             color: white;
             text-align: center;
-            padding: 2rem 0;
+            margin: 2rem 0;
+            padding-top: 1rem;
+            position: fixed;
+            width: 100%;
         }
 
         footer p {
@@ -753,6 +706,7 @@
                         <li><a href="#event">Schedule</a></li>
                         <li><a href="#info">Event Info</a></li>
                         <li><a href="#community">Community</a></li>
+                        <li><a href="#sponsors">Sponsors</a></li>
                     </ul>
                 </nav>
             </div>
@@ -965,7 +919,7 @@
                 <div class="info-card">
                     <h3>📍 Where</h3>
                     <p>MSUFCU HQ1</p>
-                    <p>3775 Coolidge Road in East Lansing, MI</p>
+                    <p><a href="https://share.google/en1baQjvdARDYIKh8" target="_blank">3775 Coolidge Road</a> in East Lansing, MI</p>
                 </div>
                 <div class="info-card">
                     <h3>⏰ Format</h3>
@@ -992,6 +946,34 @@
             </div>
         </div>
     </section>
+
+    <section id="sponsors" class="sponsor">
+        <div class="container">
+            <h2 class="sponsor-header">Thank you to the following sponsors for their support!</h2>
+            <div class="sponsor-grid">
+                <div class="sponsor-card">
+                    <a href="https://www.msufcu.org/" target="_blank">
+                        <img src="https://media.msufcu.org/publicsites/publicsite/graphics/msufcu/msufcuLogo.svg" alt="MSU Federal Credit Union" />
+                    </a>
+                </div>
+                <div class="sponsor-card">
+                    <a href="https://msufoundation.org/" target="_blank">
+                        <img src="https://msufoundation.org/wp-content/uploads/2025/02/MSURF-logo-600x202.png" alt="MSU Foundation" />
+                    </a>
+                </div>
+                <div class="sponsor-card">
+                    <a href="https://www.purelansing.com/" target="_blank">
+                        <img src="https://www.purelansing.com/wp-content/uploads/leap-logo-retina.png" alt="LEAP" />
+                    </a><br/>
+                    <i>This program is supported in part by the Lansing Economic Area Partnership and the Lansing Regional Smart Zone, committed to fostering innovation and economic growth in the Lansing region.</i>
+                </div>
+                <div class="sponsor-card">
+                    <a href="https://rmcagency.com/" target="_blank">
+                        <img src="https://rmcagency.com/wp-content/uploads/2021/12/LOGO3d2.png" alt="RMC" />
+                    </a>
+                </div>
+            </div>
+        </div>
 
     <footer>
         <div class="container">
