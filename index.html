@@ -279,7 +279,10 @@
             text-align: left;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.2);
+            
+            color: white;
         }
+
         .event-schedule {
             text-align: center;
             font-size: clamp(1.75rem, 3vw + 0.5rem, 2.5rem);
@@ -517,11 +520,6 @@
                 font-size: 1.1rem;
             }
 
-            .speaker-signup-header {
-                display: block;
-                text-align: center;
-            }
-
             /* Hero section */
             .hero h1 {
                 font-size: 2.5rem;
@@ -665,6 +663,15 @@
             transform: translateX(0);
         }
 
+        .more-info {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-left: 10px;
+            float: right;
+        }
+
         /* Accessibility: Reduced motion */
         @media (prefers-reduced-motion: reduce) {
             *,
@@ -687,6 +694,63 @@
                 transform: none !important;
             }
         }
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: white;
+  margin: 15% auto; /* 15% from the top and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  border-radius: 10px;
+  text-align: center;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.modal-body {
+  padding: 10px;
+}
+
+.speaker-photo {
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    margin: 10px;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
     </style>
 </head>
 <body>
@@ -812,36 +876,55 @@
                 </div>
                 <div class="event-card">
                     MuniCheck Mobile Inspection App
+                    <button class="more-info" onclick="document.getElementById('andy-dialog').style.display='block'">
+                          💙
+                    </button>
                 </div>
+                
                 <div class="event-card">
                     <h3>5:37 - 5:44 PM</h3>
                 </div>
                 <div class="event-card">
                     Making Research Fun
+                    <button class="more-info" onclick="document.getElementById('mark-dialog').style.display='block'">
+                          💙
+                    </button>
                 </div>
                 <div class="event-card">
                     <h3>5:44 - 5:51 PM</h3>
                 </div>
                 <div class="event-card">
                    Memory Sketch
+                   <button class="more-info" onclick="document.getElementById('angela-dialog').style.display='block'">
+                          💙
+                    </button>
                 </div>
                 <div class="event-card">
                     <h3>5:51 - 5:58 PM</h3>
                 </div>
                 <div class="event-card">
                    Lansing Tech Studio - Robots on a Mission
+                   <button class="more-info" onclick="document.getElementById('brendon-dialog').style.display='block'">
+                          💙
+                    </button>
                 </div>
                 <div class="event-card">
                     <h3>5:58 - 6:05 PM</h3>
                 </div>
                 <div class="event-card">
                    Waste to Nourish (W2N)
+                   <button class="more-info" onclick="document.getElementById('issa-dialog').style.display='block'">
+                          💙
+                    </button>
                 </div>
                 <div class="event-card">
                     <h3>6:05 - 6:12 PM</h3>
                 </div>
                 <div class="event-card">
                    Quantum Tunneling - A "New, Clear" Alternative to Nuclear Energy
+                   <button class="more-info" onclick="document.getElementById('robert-dialog').style.display='block'">
+                          💙
+                    </button>
                 </div>
                 <div class="event-card">
                     <h3>6:12 - 6:20 PM</h3>
@@ -860,30 +943,45 @@
                 </div>
                 <div class="event-card">
                     Preflight for Grants: Find Fit, Flag Risks, Submit with Confidence
+                    <button class="more-info" onclick="document.getElementById('njeri-dialog').style.display='block'">
+                          💙
+                    </button>
                 </div>
                 <div class="event-card">
                     <h3>6:42 - 6:49 PM</h3>
                 </div>
                 <div class="event-card">
                    Guideily - AI Career Readiness Suite
+                   <button class="more-info" onclick="document.getElementById('rahul-dialog').style.display='block'">
+                          💙
+                    </button>
                 </div>
                 <div class="event-card">
                     <h3>6:49 - 6:56 PM</h3>
                 </div>
                 <div class="event-card">
                    Claude Builders Club
+                   <button class="more-info" onclick="document.getElementById('caleb-dialog').style.display='block'">
+                          💙
+                    </button>
                 </div>
                 <div class="event-card">
                     <h3>6:56 - 7:03 PM</h3> 
                 </div>
                 <div class="event-card">
                    AbleVu for Accessibility
+                   <button class="more-info" onclick="document.getElementById('meegan-dialog').style.display='block'">
+                          💙
+                    </button>
                 </div>
                 <div class="event-card">
                     <h3>7:03 - 7:10 PM</h3>
                 </div>
                 <div class="event-card">
                    Trickstir
+                   <button class="more-info" onclick="document.getElementById('langston-dialog').style.display='block'">
+                          💙
+                    </button>
                 </div>
                 <div class="event-card">
                     <h3>7:10 - 7:20 PM</h3>
@@ -906,6 +1004,138 @@
             </div>
         </div>
     </section>
+
+    <div id="andy-dialog" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('andy-dialog').style.display='none'">&times;</span>
+            <div class="modal-body">
+                <h2>MuniCheck Mobile Inspection App</h2>
+                <p class="demo-description">Show mobile app and highlight AI Assisted inspection workflow with intelligent matching to ICC Codebooks</p>
+                <img class="speaker-photo" src="https://media.licdn.com/dms/image/v2/C4D03AQE7qMT0oR4jSQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1605116426202?e=1766620800&v=beta&t=I6-Pm4C1rpE-CADYqq1y62Qn1WC5nhVkvWl607Qdgdo" />
+                <p class="speaker-bio"><strong>Andy Thielking</strong> is a Software Developer, Architect and Tech Author with over 15 years of industry experience designing and building software systems.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="mark-dialog" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('mark-dialog').style.display='none'">&times;</span>
+            <div class="modal-body">
+                <h2>Making Research Fun</h2>
+                <p class="demo-description">Attempting to make an app that makes static information dynamic and fun</p>
+                <img class="speaker-photo" src="https://media.licdn.com/dms/image/v2/C5603AQHBUzT6pc0DEQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517550058914?e=1766620800&v=beta&t=Nazzmx8xl5JJPMCQbXE9Khz4xFYu47xGj9C-w2QwD1A" />
+                <p class="speaker-bio"><strong>Mark Langston</strong> is a Lansing native by way of Kenya. He is currently working on ideas and projects that focus on making learning hard things fun and enjoyable. </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="angela-dialog" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('angela-dialog').style.display='none'">&times;</span>
+            <div class="modal-body">
+                <h2>Memory Sketch</h2>
+                <p class="demo-description">Memory Sketch is transforming the way we track Alzheimer’s progression—one sketch at a time—through our innovative sketch pad and companion app. More than just a monitoring tool, Memory Sketch represents a new era in Alzheimer’s care, merging clinical-grade insights with the simplicity of at-home use. This unique approach sets a new standard for proactive, personalized, and data-driven neurological health management.</p>
+                <img class="speaker-photo" src="https://media.licdn.com/dms/image/v2/D5603AQErnaMLr0X_pw/profile-displayphoto-scale_400_400/B56ZjpOBuwH8Ag-/0/1756259439900?e=1766620800&v=beta&t=had-MP3EjuNDbMFVW4PUfZheIbJ9pB321u3ZW4UZCGU" />
+                <p class="speaker-bio"><strong>Angela Leach</strong> is a first-year MBA student at Michigan State University’s Broad College of Business, concentrating in Supply Chain Management and Finance. She holds a Bachelor of Science in Biomedical and Molecular Nutrition with a minor in Entrepreneurship and Innovation, also from MSU. She currently serves as President of the Entrepreneurship Association and works as a Graduate Assistant for the Burgess Institute for Entrepreneurship and Innovation, supporting the MBA program and Venture Creation initiatives. She is passionate about making entrepreneurship more accessible to all students and helping them develop an entrepreneurial mindset through design thinking and creative problem-solving.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="brendon-dialog" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('brendon-dialog').style.display='none'">&times;</span>
+            <div class="modal-body">
+                <h2>Lansing Tech Studio</h2>
+                <p class="demo-description">Robots on a Mission</p>
+                <img class="speaker-photo" src="https://scontent-det1-1.xx.fbcdn.net/v/t39.30808-1/522689836_122148238760763200_7762115400418894447_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=106&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=qVCaaZw7drsQ7kNvwG2JXcB&_nc_oc=AdnS0VZRshHqnQacibPqJUb0sTEZMrQ2KUspzOD84tk59QBbFnvXamiDYnanJd6Z-Xs&_nc_zt=24&_nc_ht=scontent-det1-1.xx&_nc_gid=poIwct4sErMlRqRZv2g35g&oh=00_Afmggufk6Bt80WulS0e9OOu4xMpH3wXuM74f4XvYtrhjgQ&oe=693D5D29" />
+                <p class="speaker-bio"><strong>Brendon Thiede</strong> is a Principal SRE at August Health and the President of Lansing Tech Studio. The Lansing Tech Studio empowers the next generation by igniting their passion for technology, innovation, leadership, and service, cultivating tomorrow's leaders driven to shape a better future in their communities and the world. He manages four FIRST lego league teams made up of homeschoolers and community members in the fall. In the spring, LTS will host student tech workshops that culminate in a Demo Day and summer camps. </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="issa-dialog" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('issa-dialog').style.display='none'">&times;</span>
+            <div class="modal-body">
+                <h2>Waste to Nourish (W2N)</h2>
+                <p class="demo-description">Waste to Nourish (W2N) is a mobile, climate-controlled farming system that transforms campus and community food waste into high-protein animal feed and organic fertilizer using Black Soldier Fly larvae. Built inside a shipping container, the system demonstrates how waste can be repurposed into resources that support local agriculture and reduce landfill emissions. What makes W2N unique is its compact, scalable design and its dual purpose — tackling food waste while providing hands-on education in sustainability and circular economy. Our goal is to make every university and community self-sufficient in managing waste and creating value from it.</p>
+                <img class="speaker-photo" src="https://media.licdn.com/dms/image/v2/D5603AQEzUDaakyKo8g/profile-displayphoto-scale_400_400/B56Zpq8vaXIsAg-/0/1762730911935?e=1766620800&v=beta&t=TuO6U2QT-WL5KlndH2O4Zu64njg3t4ty8zoJvpsQQdo" />
+                <p class="speaker-bio"><strong>Issa Kalil Yattassaye</strong> is a senior in AgroBusiness Management at Michigan State University and founder of Waste to Nourish (W2N) — a venture transforming food waste into animal feed and organic fertilizer through automated, mobile Black Soldier Fly farms. His work bridges agriculture, sustainability, and technology, using IoT sensors, smart automation, and data-driven design to make circular food systems practical and scalable. Beyond building tech, he's passionate about empowering students and local communities to turn ideas into impact. From winning pitch competitions to collaborating with MSU’s Recycling and Dining teams, he's driven by one mission: proving that sustainability can be both profitable and transformative.</p>
+            </div>
+        </div>
+    </div>
+
+     <div id="robert-dialog" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('robert-dialog').style.display='none'">&times;</span>
+            <div class="modal-body">
+                <h2>Quantum Tunneling - A "New, Clear" Alternative to Nuclear Energy</h2>
+                <p class="demo-description">Imagine a form of nuclear energy that produced no nuclear waste, no danger of radioactive contamination, and no possibility of catastrophic meltdown. Quantum Tunneling Technologies' revolutionary energy source provides just that - direct conversion of matter to energy - clean, green, and pure.</p>
+                <img class="speaker-photo" src="https://media.licdn.com/dms/image/v2/D4E03AQFzHPV-F4krZA/profile-displayphoto-shrink_400_400/B4EZdb._9DHcAo-/0/1749594933116?e=1766620800&v=beta&t=A8PNwRRcS8lWFO5osESiNftvYMjshhYKOjdOLigP0VM" />
+                <p class="speaker-bio"><strong>Dr. Robert Hipple</strong>, the discoverer of the process, has 20 years experience serving in numerous roles as a physicist, including the Facility for Rare Isotopes and Beams, Niowave, MSU Department of Electrical and Computer Engineering, MSU Department of Physics and Astronomy, United States Particle Accelerator School, and Lansing Community College. He is also highly active in IEEE (6 years) and is an avid Amateur Radio enthusiast.</p>
+            </div>
+        </div>
+    </div>
+
+     <div id="njeri-dialog" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('njeri-dialog').style.display='none'">&times;</span>
+            <div class="modal-body">
+                <h2>Preflight for Grants: Find Fit, Flag Risks, Submit with Confidence</h2>
+                <p class="demo-description">I’ll demo an MVP that aggregates government grant opportunities, shows past winners, and uses AI to preflight applications so teams see eligibility, deadlines, and weak spots before they hit submit. The goal: reduce rewrites and move from months to weeks, starting with construction and nonprofit use cases.⁠</p>
+                <img class="speaker-photo" src="https://media.licdn.com/dms/image/v2/D5603AQG6WbrQBYPQSw/profile-displayphoto-scale_400_400/B56ZpMLU_HJQAg-/0/1762214632330?e=1766620800&v=beta&t=uQmLY_NLGAKxNnGa-XsJLRQypTdBoI-4hELu6goPYbA" />
+                <p class="speaker-bio"><strong>Njeri Cooper</strong>is a software engineer, MBA student and SaaS founder building a funding co‑pilot. ⁠Njeri’s background includes software engineering contracting, undergrad studies in Computer Engineering Management, and a tech startup program in San Francisco. Professional experience spans Youth Villages, ALSAC/St. Jude and the City of Memphis; contributing to multi‑million‑dollar digital campaigns and shipping web and mobile products across various cloud stacks.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="rahul-dialog" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('rahul-dialog').style.display='none'">&times;</span>
+            <div class="modal-body">
+                <h2>Guideily – AI Career Readiness Suite</h2>
+                <p class="demo-description">I will demo how Guideily uses AI to convert a student’s academic history, skills, and goals into a personalized Career Blueprint in real time. The live demo will show how a student can answer a few open ended questions and instantly receive tailored career paths, skill gaps, recommended projects, and next step actions. I will also demonstrate how Reverse Job Engineering helps students understand exactly what skills top employers expect, and how the Project Builder converts those skill gaps into clear, achievable student projects. The goal is to show how an AI driven career readiness suite can bring clarity and direction to learners in a simple and interactive way.</p>
+                <img class="speaker-photo" src="https://media.licdn.com/dms/image/v2/D5603AQGSurHaPCKPxQ/profile-displayphoto-scale_400_400/B56ZrRlmJ7JkAg-/0/1764452886219?e=1766620800&v=beta&t=xv5BitE8ZZmtcDb8GF9L6rgjnjpo3wX5zNJmJfOG06Y" />
+                <p class="speaker-bio"><strong>Rahul Pataskar</strong>is a student at Michigan State University and the founder of Guideily, an AI based platform that helps students discover personalized career paths and build industry ready portfolios. He has built a 45 km/h electric bike, authored a book, earned a national Olympiad gold medal, and competed as a national level kickboxer with a black belt in Shotokan karate. He also completed a Junior MBA in Entrepreneurship through Clever Harvey and is passionate about innovation, education, and personal growth.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="caleb-dialog" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('caleb-dialog').style.display='none'">&times;</span>
+            <div class="modal-body">
+                <h2>Claude Builders Club</h2>
+                <p class="demo-description">Claude Builders Club pairs local businesses in the Lansing area with talented MSU computer science students for real-world software projects. We will demonstrate our project process and explain how organizations can access development support from students. This is an awesome opportunity for businesses to learn how they can leverage student talent for web apps, automation tools, and custom software solutions.</p>
+                <img class="speaker-photo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTiyCERHB3zSdBy91mfVdUcrzOii9P64krRw&s" />
+                <p class="speaker-bio">Our executive board brings diverse technical and leadership experience to Claude Builders Club. Hadi, our President, has interned at NASA and is currently authoring a book on computational roots. Jason, our Secretary, brings over a decade of coding experience, including internships at TechSmith and MSU's Institute for Cyber-Enabled Research (ICER). Ankur, our Vice President, serves as a project lead at ThinkStack, and Caleb, our Treasurer, has driven results in marketing and sales roles.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="meegan-dialog" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('meegan-dialog').style.display='none'">&times;</span>
+            <div class="modal-body">
+                <h2>AbleVu for Accessibility </h2>
+                <p class="demo-description">I will present a visual, live demo of AbleVu, a platform that makes accessibility information clear and easy to find. The demo will walk the audience through how users view accessibility features for public spaces, explore virtual tours, and see how quickly a business profile can be created. I’ll also share a brief preview of upcoming AI capabilities that enhance verified accessibility search. This will be a fast, engaging demonstration that showcases how AbleVu empowers communities through better accessibility transparency.</p>
+                <img class="speaker-photo" src="https://hdsunflower.com/media/magefan_blog/AbleVu_thumbnail.png" />
+                <p class="speaker-bio"><strong>Meegan Winters</strong> is the Founder of AbleVu and Co-Founder of Able Eyes, two mission-driven organizations dedicated to making accessibility information transparent, trustworthy, and easy to navigate. Her work is rooted in years as a special educator and assistant principal, where she saw firsthand the gaps in accessibility—made even more personal through the experiences of her best friend, now her guardian angel, who was a wheelchair user.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="langston-dialog" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('langston-dialog').style.display='none'">&times;</span>
+            <div class="modal-body">
+                <h2>Trickstir</h2>
+                <p class="demo-description">Trickstir is a puzzle rotation game about brewing the ultimate potion. This project was developed in 6 weeks as a part of the game development minor at MSU. We later got recognition from the college for its outstanding quality:</p>
+                <img class="speaker-photo" src="https://media.licdn.com/dms/image/v2/D5603AQG5uWwrQsmJnA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1682427996439?e=1766620800&v=beta&t=fGkV_koOe2xBfMXeZL6KTTylRGCIsFThimrQVpbPUSM" />
+                <p class="speaker-bio"><strong>Langston Key</strong> is a 3rd year student at Michigan State University where he studies game development and philosophy. He has worked on both commercial and NSF grant funded projects as a programmer and designer. Currently, he works at Will Winn Games on their upcoming title Blast Ball. He has a breadth of experience across disciplines, but a special passion for puzzle design.</p>
+            </div>
+        </div>
+    </div>
 
     <section id="info" class="event-info">
         <div class="container">
